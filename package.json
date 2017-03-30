@@ -1,5 +1,5 @@
 {
-  "name": "angular2-jsonapi",
+  "name": "lpcustom-angular2-jsonapi",
   "version": "3.4.0",
   "description": "A lightweight Angular 2 adapter for JSON API",
   "scripts": {
@@ -13,11 +13,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ghidoz/angular2-jsonapi"
+    "url": "https://github.com/lpcustom/angular2-jsonapi"
   },
   "author": {
-    "name": "Daniele Ghidoli",
-    "url": "http://danieleghidoli.it"
+    "name": "Randy Yates",
+    "url": "http://randyyates.us"
   },
   "keywords": [
     "angular",
@@ -28,7 +28,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ghidoz/angular2-jsonapi/issues"
+    "url": "https://github.com/lpcustom/angular2-jsonapi/issues"
   },
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",

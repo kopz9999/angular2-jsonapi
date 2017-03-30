@@ -100,6 +100,11 @@ export class JsonApiDatastore {
   private buildUrl<T extends JsonApiModel>(modelType: ModelType<T>, params?: any, id?: string): string {
     let typeName: string = Reflect.getMetadata('JsonApiModelConfig', modelType).type;
     let baseUrl: string = Reflect.getMetadata('JsonApiDatastoreConfig', this.constructor).baseUrl;
+    let extraUrl = null;
+    if(params._extraUrl) {
+      extraUrl = '/' + params._extraUrl;
+      delete params._extraUrl;
+    }
     let idToken: string = id ? `/${id}` : null;
     return [baseUrl, typeName, idToken, (params ? '?' : ''), this.toQueryString(params)].join('');
   }
