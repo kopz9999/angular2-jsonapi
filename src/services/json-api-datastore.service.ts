@@ -128,7 +128,7 @@ export class JsonApiDatastore {
     let models: T[] = [];
     let obj: any;
 
-    if(!(body.data instanceof Array)) {
+    if (!(body.data instanceof Array)) {
       body.data = [body.data];
     }
     body.data.forEach((data: any) => {
@@ -143,7 +143,7 @@ export class JsonApiDatastore {
       }
       models.push(model);
     });
-    if(body.meta) {
+    if (body.meta) {
       obj._meta = body.meta;
     }
     obj.models = models;
