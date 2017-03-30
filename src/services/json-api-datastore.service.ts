@@ -131,7 +131,7 @@ export class JsonApiDatastore {
   private extractQueryData<T extends JsonApiModel>(res: any, modelType: ModelType<T>): T[] {
     let body: any = res.json();
     let models: T[] = [];
-    let obj: any;
+    let obj: any = {_meta: null, models: null};
 
     if (!(body.data instanceof Array)) {
       body.data = [body.data];
