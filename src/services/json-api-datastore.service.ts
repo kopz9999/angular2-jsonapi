@@ -106,7 +106,7 @@ export class JsonApiDatastore {
       delete params._extraUrl;
     }
     let idToken: string = id ? `/${id}` : null;
-    return [baseUrl, typeName, idToken, (params ? '?' : ''), this.toQueryString(params)].join('');
+    return [baseUrl, typeName, extraUrl, idToken, (params ? '?' : ''), this.toQueryString(params)].join('');
   }
 
   private getRelationships(data: any): any {
