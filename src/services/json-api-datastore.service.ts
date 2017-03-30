@@ -126,6 +126,11 @@ export class JsonApiDatastore {
   private extractQueryData<T extends JsonApiModel>(res: any, modelType: ModelType<T>): T[] {
     let body: any = res.json();
     let models: T[] = [];
+    let obj: any;
+
+    if(!(body.data instanceof Array)) {
+      body.data = [body.data];
+    }
     body.data.forEach((data: any) => {
       let model: T = new modelType(this, data);
       this.addToStore(model);
@@ -133,9 +138,16 @@ export class JsonApiDatastore {
         model.syncRelationships(data, body.included, 0);
         this.addToStore(model);
       }
+      if (data.meta) {
+        model._meta = data.meta;
+      }
       models.push(model);
     });
-    return models;
+    if(body.meta) {
+      obj._meta = body.meta;
+    }
+    obj.models = models;
+    return obj;
   }
 
   private extractRecordData<T extends JsonApiModel>(res: any, modelType: ModelType<T>, model?: T): T {
