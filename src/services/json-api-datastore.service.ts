@@ -101,12 +101,17 @@ export class JsonApiDatastore {
     let typeName: string = Reflect.getMetadata('JsonApiModelConfig', modelType).type;
     let baseUrl: string = Reflect.getMetadata('JsonApiDatastoreConfig', this.constructor).baseUrl;
     let extraUrl = null;
-    if(params._extraUrl) {
+    let actionURL = null;
+    if (params && params._extraUrl) {
       extraUrl = '/' + params._extraUrl;
       delete params._extraUrl;
     }
+    if (params && params._actionURL) {
+      actionURL = '/' + params._actionURL;
+      delete params._actionURL;
+    }
     let idToken: string = id ? `/${id}` : null;
-    return [baseUrl, typeName, extraUrl, idToken, (params ? '?' : ''), this.toQueryString(params)].join('');
+    return [baseUrl, (extraUrl ? extraUrl : typeName), idToken, actionURL, (params ? '?' : ''), this.toQueryString(params)].join('');
   }
 
   private getRelationships(data: any): any {

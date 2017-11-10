@@ -1,6 +1,6 @@
 {
-  "name": "lpcustom-angular2-jsonapi",
-  "version": "3.4.3",
+  "name": "curaytor-angular2-jsonapi",
+  "version": "3.4.3-rc.0.2",
   "description": "A lightweight Angular 2 adapter for JSON API",
   "scripts": {
     "build": "rimraf dist src/compiled && tslint src/**/*.ts && ngc",
@@ -13,11 +13,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lpcustom/angular2-jsonapi"
+    "url": "https://github.com/kopz9999/angular2-jsonapi"
   },
   "author": {
-    "name": "Randy Yates",
-    "url": "http://randyyates.us"
+    "name": "Luis Canales",
+    "url": "https://github.com/kopz9999"
   },
   "keywords": [
     "angular",
@@ -41,9 +41,8 @@
     "@angular/core": "^4.0.1",
     "reflect-metadata": "^0.1.3",
     "rxjs": "^5.2.0",
-    "typescript": "^2.1.5",
-    "@angular/compiler": "4.0.1",
-    "@angular/core": "4.0.1"
+    "typescript": "^2.2.1",
+    "@angular/compiler": "4.0.1"
   },
   "devDependencies": {
     "@angular/animations": "^4.0.1",
@@ -79,7 +78,7 @@
     "sourcemap-istanbul-instrumenter-loader": "^0.2.0",
     "ts-loader": "^0.8.2",
     "tslint": "^4.0.2",
-    "typescript": "^2.1.5",
+    "typescript": "^2.2.1",
     "webpack": "^2.3.2",
     "zone.js": "^0.8.5"
   },
