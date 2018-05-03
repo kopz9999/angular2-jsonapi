@@ -198,8 +198,9 @@ export class JsonApiDatastore {
         }
         let value: any = params[key];
         if (value instanceof Array) {
+          const keyArr = key.length < 2 || (key[key.length-2] !== '[' || key[key.length-1] !== ']') ? key + '[]' : key;
           for (let i = 0; i < value.length; i++) {
-            encodedStr = encodedStr + key + '=' + encodeURIComponent(value[i]) + '&';
+            encodedStr = encodedStr + keyArr + '=' + encodeURIComponent(value[i]) + '&';
           }
         } else if (typeof value === 'object') {
           for (let innerKey in value) {
