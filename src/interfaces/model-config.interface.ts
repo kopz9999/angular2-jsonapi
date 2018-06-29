@@ -1,9 +1,9 @@
-import { JsonApiMetaModel, MetaModelType } from '../models/json-api-meta.model';
+import { JsonApiMetaModel } from '../models/json-api-meta.model';
 
-export interface ModelConfig<T = any> {
+export interface ModelConfig {
   type: string;
   apiVersion?: string;
   baseUrl?: string;
   modelEndpointUrl?: string;
-  meta?: MetaModelType<T>;
+  meta?: JsonApiMetaModel;
 }
